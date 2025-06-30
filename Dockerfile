@@ -13,8 +13,8 @@ ARG GO_VERSION=1.23.4
 ################################################################################
 # Build Stage - Backend Application
 ################################################################################
-FROM golang:${GO_VERSION} AS backend-build
-# removed this from line 16 --> --platform=$BUILDPLATFORM
+FROM --platform $BUILDPLATFORM AS backend-build
+# removed this from line 16 -->  golang:${GO_VERSION}
 # Set working directory
 WORKDIR /src
 
