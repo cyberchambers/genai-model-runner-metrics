@@ -46,7 +46,9 @@ RUN --mount=type=cache,target=/go/pkg/mod/ \
 ################################################################################
 # Runtime Stage - Production Image
 ################################################################################
-FROM alpine:latest AS backend
+FROM alpine:latest
+# removing AS syntax
+# AS backend
 
 # Install necessary packages and certificates
 RUN --mount=type=cache,target=/var/cache/apk \
