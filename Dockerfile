@@ -72,7 +72,9 @@ RUN adduser \
 USER appuser
 
 # Copy the built binary from build stage
-COPY --from=backend-build /bin/server /bin/
+# COPY --from=backend-build /bin/server /bin/
+# backend-build was removed when AS syntax was removed. Removing --from option to clear copy error
+COPY /bin/server /bin/
 
 # Expose application port
 EXPOSE 8080
